@@ -212,7 +212,7 @@ techone-heaters/
 │   │   │                                 #   "Trusted by Industry Leaders" heading
 │   │   ├── ContactForm.jsx               # B2B RFQ form — name, company, email, phone,
 │   │   │                                 #   equipment dropdown, message textarea;
-│   │   │                                 #   dual-submit: WhatsApp (+918919095579) & Email
+│   │   │                                 #   dual-submit: WhatsApp (+919177776501) & Email
 │   │   ├── IndustriesGrid.jsx            # Homepage industries preview
 │   │   ├── ManufacturingCategories.jsx   # Product category overview cards
 │   │   ├── ProductShowcase.jsx           # Featured products homepage section
@@ -363,12 +363,12 @@ Custom scrollbar via `@layer base`:
 
 The RFQ form collects: **Name, Company, Email, Phone, Equipment Type, Message** and formats them into a professional B2B message string, then submits via:
 
-- **WhatsApp** → `https://wa.me/8919095579?text={encodedMessage}` (opens in new tab)
+- **WhatsApp** → `https://wa.me/919177776501?text={encodedMessage}` (opens in new tab)
 - **Email** → `mailto:techoneheaters@gmail.com?subject=...&body=...` (opens mail client)
 
 ### Review System (`ReviewForm.jsx`)
 
-Interactive 5-star rating with hover preview + click selection. Validated before submission (disabled submit if `rating === 0`). Submits as a formatted WhatsApp message to `+91 89190 95579`. Shows `CheckCircle` success state for 5 seconds post-submit.
+Interactive 5-star rating with hover preview + click selection. Validated before submission (disabled submit if `rating === 0`). Submits as a formatted WhatsApp message to `+91 91777 76501`. Shows `CheckCircle` success state for 5 seconds post-submit.
 
 ### BackToTop Button (`BackToTop.jsx`)
 
@@ -529,7 +529,7 @@ All models **auto-rotate** at `0.2 rad/s` via `useFrame`. Users can **drag to or
 | 📍 **Address** | #506/P, 7-920, Subash Nagar, Quthbullapur Mdl., Jeedimetla, Hyderabad — 500 055 (T.S.), India |
 | 📞 **Phone 1** | +91 91777 76501 |
 | 📞 **Phone 2** | +91 97005 41138 |
-| 📱 **WhatsApp Sales** | +91 89190 95579 |
+| 📱 **WhatsApp Sales** | +91 91777 76501 |
 | 📧 **Email** | techoneheaters@gmail.com |
 | 🌐 **Website** | https://techoneheaters.com |
 
