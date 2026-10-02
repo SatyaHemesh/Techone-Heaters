@@ -40,8 +40,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          {/* UPDATED: Added font-['var(--font-montserrat)'] right here! */}
-          <h1 className="font-['var(--font-montserrat)'] text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight uppercase leading-tight drop-shadow-2xl transition-colors duration-300">
+          {/* UPDATED: Changed to use the utility class 'font-montserrat' */}
+          <h1 className="font-montserrat text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight uppercase leading-tight drop-shadow-2xl transition-colors duration-300">
             Industrial Heating <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-600 to-red-600 dark:from-orange-500 dark:to-red-600 border-b-2 sm:border-b-4 border-orange-500 inline-block pb-1 sm:pb-2 mt-2 sm:mt-0">
               Engineered for Maximum Performance
@@ -67,8 +67,8 @@ export default function HeroSection() {
           className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
         >
           {/* Primary CTA (Explore Products) */}
-          {/* UPDATED: Added Montserrat font to button */}
-          <Link href="/products" className="font-['var(--font-montserrat)'] relative group flex items-center justify-center w-full sm:w-auto px-6 py-4 sm:px-8 font-bold text-cyan-700 dark:text-white uppercase tracking-wider bg-transparent border border-cyan-500 overflow-hidden transition-all duration-300 hover:bg-cyan-50 dark:hover:bg-cyan-500/10">
+          {/* UPDATED: Changed to use the utility class 'font-montserrat' */}
+          <Link href="/products" className="font-montserrat relative group flex items-center justify-center w-full sm:w-auto px-6 py-4 sm:px-8 font-bold text-cyan-700 dark:text-white uppercase tracking-wider bg-transparent border border-cyan-500 overflow-hidden transition-all duration-300 hover:bg-cyan-50 dark:hover:bg-cyan-500/10">
             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-cyan-500 rounded-full group-hover:w-full group-hover:h-56 opacity-10 pointer-events-none"></span>
             <span className="relative flex items-center gap-2 text-sm sm:text-base">
               Explore Products <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -77,8 +77,8 @@ export default function HeroSection() {
           </Link>
 
           {/* Secondary CTA (Request Quotation) */}
-          {/* UPDATED: Added Montserrat font to button */}
-          <Link href="/contact" className="font-['var(--font-montserrat)'] relative group flex items-center justify-center w-full sm:w-auto px-6 py-4 sm:px-8 font-bold text-white uppercase tracking-wider bg-linear-to-r from-orange-600 to-red-600 shadow-[0_0_20px_rgba(234,88,12,0.3)] dark:shadow-[0_0_20px_rgba(234,88,12,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] dark:hover:shadow-[0_0_30px_rgba(234,88,12,0.8)] hover:scale-[1.02]">
+          {/* UPDATED: Changed to use the utility class 'font-montserrat' */}
+          <Link href="/contact" className="font-montserrat relative group flex items-center justify-center w-full sm:w-auto px-6 py-4 sm:px-8 font-bold text-white uppercase tracking-wider bg-linear-to-r from-orange-600 to-red-600 shadow-[0_0_20px_rgba(234,88,12,0.3)] dark:shadow-[0_0_20px_rgba(234,88,12,0.4)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] dark:hover:shadow-[0_0_30px_rgba(234,88,12,0.8)] hover:scale-[1.02]">
             <span className="relative text-sm sm:text-base">Request Quotation</span>
           </Link>
         </motion.div>

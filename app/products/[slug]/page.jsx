@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ChevronRight, ShieldAlert, Cpu, ImageIcon, Send } from 'lucide-react';
 import Link from 'next/link';
 import DownloadPdfButton from '../../../components/ui/DownloadPdfButton';
+import CinematicLightbox from '../../../components/ui/CinematicLightbox';
 
 // Generate static routes for all products to ensure ultra-fast loading
 export async function generateStaticParams() {
@@ -54,17 +55,18 @@ export default async function ProductDetailPage({ params }) {
             <div className="absolute inset-0 opacity-20 dark:opacity-10 pointer-events-none bg-[linear-gradient(#9ca3af_1px,transparent_1px),linear-gradient(90deg,#9ca3af_1px,transparent_1px)] dark:bg-[linear-gradient(#374151_1px,transparent_1px),linear-gradient(90deg,#374151_1px,transparent_1px)] transition-colors duration-300" style={{ backgroundSize: '20px 20px' }}></div>
             
             {product.image ? (
-              <img 
-                src={product.image} 
-                alt={`${product.name} High Resolution Specification`}
-                className="w-full h-auto block object-contain transition-transform duration-700 group-hover:scale-102 relative z-10"
-              />
-            ) : (
-              <div className="w-full h-96 flex flex-col items-center justify-center text-gray-400 dark:text-gray-600 gap-3 relative z-10">
-                <ImageIcon className="w-12 h-12 opacity-30 dark:opacity-20 animate-pulse" />
-                <span className="text-xs uppercase tracking-widest font-bold opacity-60 dark:opacity-40">Image Pending Upload</span>
-              </div>
-            )}
+                <div className="relative z-10">
+                  <CinematicLightbox 
+                    src={product.image} 
+                    alt={`${product.name} High Resolution Specification`} 
+                  />
+                </div>
+              ) : (
+                <div className="w-full h-96 flex flex-col items-center justify-center text-gray-400 dark:text-gray-600 gap-3 relative z-10">
+                  <ImageIcon className="w-12 h-12 opacity-30 dark:opacity-20 animate-pulse" />
+                  <span className="text-xs uppercase tracking-widest font-bold opacity-60 dark:opacity-40">Image Pending Upload</span>
+                </div>
+              )}
 
             {/* Corner technical design accents */}
             <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-cyan-500/40 m-4 pointer-events-none"></div>

@@ -13,31 +13,49 @@ export default function ShowcaseGallery() {
   // NEW: State to track which specific image of the product we are viewing
   const [imageIndex, setImageIndex] = useState(0);
 
-  // UPDATED: Replaced 'src' with an 'images' array holding multiple photos
+  // UPDATED: Pointing to the new product-gallery folder
   const products = [
     { 
       name: 'Ceramic Band Heaters', 
       spec: 'Up to 600°C Max Temp',
       category: 'Injection Molding',
-      images: ['/images/logo.png', '/images/logo.png', '/images/logo.png'] 
+      images: [
+        '/images/product-gallery/band-heater-1.jpeg',
+        '/images/product-gallery/band-heater-2.jpeg',
+        '/images/product-gallery/band-heater-3.jpeg',
+        '/images/product-gallery/band-heater-4.jpeg'
+      ] 
     },
     { 
       name: 'High-Density Cartridge', 
       spec: 'Precision Spot Heating',
       category: 'Die Casting',
-      images: ['/images/logo.png', '/images/logo.png'] 
+      images: [
+        '/images/product-gallery/cartridge-heater-1.jpeg',
+        '/images/product-gallery/cartridge-heater-2.jpeg',
+        '/images/product-gallery/cartridge-heater-3.jpeg'
+      ] 
     },
     { 
       name: 'Muffle Furnaces', 
       spec: 'Laboratory Grade Built',
       category: 'Thermal Processing',
-      images: ['/images/logo.png', '/images/logo.png', '/images/logo.png', '/images/logo.png'] 
+      images: [
+        '/images/product-gallery/muffle-furnace-1.jpeg',
+        '/images/product-gallery/muffle-furnace-2.jpeg',
+        '/images/product-gallery/muffle-furnace-3.jpeg',
+        '/images/product-gallery/muffle-furnace-4.jpeg'
+      ] 
     },
     { 
       name: 'K-Type Thermocouples', 
       spec: 'Accurate Heat Sensing',
       category: 'Measurement',
-      images: ['/images/logo.png'] 
+      images: [
+        '/images/product-gallery/thermocouple-1.jpeg',
+        '/images/product-gallery/thermocouple-2.jpeg',
+        '/images/product-gallery/thermocouple-3.jpeg'
+      ] 
     }
   ];
 
@@ -63,7 +81,7 @@ export default function ShowcaseGallery() {
       {/* Left Side: Interactive Catalog List */}
       <div className="w-full lg:w-1/2 space-y-4">
         <div className="mb-12 text-center lg:text-left">
-          <h1 className="font-['var(--font-montserrat)'] text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter mb-4 text-gray-900 dark:text-white transition-colors">
+          <h1 className="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter mb-4 text-gray-900 dark:text-white transition-colors">
             Thermal <span className="text-orange-600">Catalog</span>
           </h1>
           <p className="text-gray-600 dark:text-gray-400 font-medium">Engineered for absolute precision and maximum durability.</p>
@@ -91,7 +109,7 @@ export default function ShowcaseGallery() {
                 <p className="text-xs text-orange-600 mb-2 uppercase tracking-widest font-bold">
                   {product.category}
                 </p>
-                <h3 className={`font-['var(--font-montserrat)'] text-xl sm:text-2xl font-black uppercase tracking-wide transition-colors ${
+                <h3 className={`font-montserrat text-xl sm:text-2xl font-black uppercase tracking-wide transition-colors ${
                   activeItem === idx ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-300'
                 }`}>
                   {product.name}
@@ -116,7 +134,7 @@ export default function ShowcaseGallery() {
 
       {/* Right Side: Dynamic Massive Image Display */}
       <div className="w-full lg:w-1/2 aspect-square sm:aspect-4/5 bg-gray-200 dark:bg-industrial-900/50 rounded-sm border border-gray-300 dark:border-white/10 relative overflow-hidden transition-colors shadow-2xl group">
-        <span className="text-[12rem] font-['var(--font-montserrat)'] font-black text-black/5 dark:text-white/5 absolute -top-10 right-4 select-none z-0 pointer-events-none transition-all duration-500">
+        <span className="text-[12rem] font-montserrat font-black text-black/5 dark:text-white/5 absolute -top-10 right-4 select-none z-0 pointer-events-none transition-all duration-500">
           0{activeItem + 1}
         </span>
         
@@ -129,14 +147,16 @@ export default function ShowcaseGallery() {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="absolute inset-0 z-10 flex flex-col items-center justify-center p-8"
           >
-            <div className="relative w-full h-2/3 mb-4">
-              <Image 
-                src={products[activeItem].images[imageIndex]}
-                alt={`${products[activeItem].name} - Image ${imageIndex + 1}`}
-                fill
-                className="object-contain drop-shadow-2xl"
-                priority
-              />
+            <div className="relative w-full flex-1 min-h-0 mb-4 flex items-center justify-center">
+              <div className="relative w-full h-full">
+                <Image 
+                  src={products[activeItem].images[imageIndex]}
+                  alt={`${products[activeItem].name} - Image ${imageIndex + 1}`}
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  priority
+                />
+              </div>
             </div>
 
             {/* NEW: Mini Gallery Navigation Dots */}

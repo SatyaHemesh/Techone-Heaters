@@ -84,7 +84,7 @@ export const products = [
     id: "thermocouples-and-sensors",
     name: "Thermocouples & Sensors",
     category: "Sensors",
-    image: "/images/products/thermocouples-and-sensors",
+    image: "/images/products/thermocouples-and-sensors.png",
     description: "A complete range of thermocouples and RTDs predominantly used for plastic moulding and packaging machines. Custom designs can be produced for any machine or process.",
     features: ["Customized designs", "RTDs & Thermocouples", "Plastic moulding focus"],
   }

@@ -41,7 +41,7 @@ export default function Navbar() {
               </div>
 
               {/* Company Text - Wrapped in the Syne font variable! */}
-              <div className="hidden sm:flex flex-col justify-center font-['var(--font-syne)']">
+              <div className="hidden sm:flex flex-col justify-center font-montserrat">
                 <span className="text-gray-900 dark:text-white font-extrabold text-lg sm:text-xl leading-none transition-colors">
                   TECHONE
                 </span>

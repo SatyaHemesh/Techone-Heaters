@@ -27,7 +27,7 @@ export default function ReviewForm() {
 ${review}`;
 
     // Directing to WhatsApp
-    const whatsappUrl = `https://wa.me/918919095579?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919177776501?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     setIsSubmitted(true);

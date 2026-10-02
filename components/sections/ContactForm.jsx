@@ -41,7 +41,7 @@ ${name}`;
 
     if (submitType === 'whatsapp') {
       // Direct to WhatsApp API with your specific sales number
-      const whatsappNumber = '8919095579';
+      const whatsappNumber = '9177776501';
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
       window.open(whatsappUrl, '_blank');
     } else if (submitType === 'email') {

@@ -1,5 +1,5 @@
 import SectionHeading from '../../components/ui/SectionHeading';
-import { Shield, Zap, Target, Globe } from 'lucide-react';
+import { Shield, Zap, Target, Globe, PenTool, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 
 export const metadata = {
@@ -18,67 +18,83 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-industrial-800 pt-32 transition-colors duration-300">
       
-      {/* 1. Founder / Leadership Section (Now First) */}
+      {/* 1. The Blueprint Leadership Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        
+        {/* The Outer Engineering Frame */}
+        <div className="relative border border-gray-300 dark:border-white/10 bg-white dark:bg-industrial-900 shadow-2xl overflow-hidden group">
           
-          {/* Founder Image */}
-          <div className="lg:col-span-5 relative group">
-            <div className="absolute -inset-4 bg-orange-600/20 dark:bg-orange-600/10 transform rotate-3 rounded-sm transition-transform duration-500 group-hover:rotate-6"></div>
+          {/* Engineering Grid Background */}
+          <div className="absolute inset-0 opacity-20 dark:opacity-10 pointer-events-none bg-[linear-gradient(#9ca3af_1px,transparent_1px),linear-gradient(90deg,#9ca3af_1px,transparent_1px)] dark:bg-[linear-gradient(#4b5563_1px,transparent_1px),linear-gradient(90deg,#4b5563_1px,transparent_1px)]" style={{ backgroundSize: '40px 40px' }}></div>
+          
+          {/* Corner Accents */}
+          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-600 z-10"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-orange-600 z-10"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-orange-600 z-10"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-orange-600 z-10"></div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 relative z-10">
             
-            <div className="relative aspect-3/4 bg-white dark:bg-industrial-900 rounded-sm overflow-hidden border border-gray-200 dark:border-gray-700 shadow-xl z-10 flex items-center justify-center">
-              <Image 
-                src="/images/logo.png" 
-                alt="K. Ram - Founder of Techone Heaters" 
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-          </div>
-
-          {/* Founder Details */}
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-0.5 w-8 bg-orange-500"></div>
-              {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
-              <span className="font-arimo text-orange-600 dark:text-orange-500 font-bold uppercase tracking-[0.15em] text-sm md:text-base">Company Leadership</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-2 uppercase tracking-tight font-montserrat">
-              K. Ram
-            </h1>
-            {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
-            <p className="font-arimo text-sm md:text-base text-cyan-700 dark:text-cyan-500 font-bold uppercase tracking-[0.15em] mb-8">
-              Founder & Managing Director
-            </p>
-
-            <div className="space-y-6 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-              <p>
-                K. Ram established TECHONE HEATERS with a singular vision: to engineer thermal processing solutions that outlast and outperform standard industry benchmarks. With decades of hands-on experience in industrial manufacturing, the company was built on the uncompromising principles of rugged durability and absolute precision.
+            {/* Left Block: The Name & Title */}
+            <div className="lg:col-span-4 bg-gray-100 dark:bg-industrial-800/80 p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-gray-300 dark:border-white/10 flex flex-col justify-center relative backdrop-blur-sm">
+              {/* FIX 1: Removed absolute positioning so it flows naturally above the text */}
+              <div className="text-gray-400 dark:text-gray-600 mb-6">
+                <PenTool className="w-8 h-8" />
+              </div>
+              <p className="font-arimo text-orange-600 dark:text-orange-500 font-bold uppercase tracking-[0.2em] text-sm mb-4">
+                Company Leadership
               </p>
-              <p>
-                Under his leadership, what started as a specialized heating element workshop in Hyderabad has evolved into a globally trusted manufacturing partner for the plastic moulding, packaging, chemical, and heavy machinery sectors.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white uppercase tracking-tighter font-montserrat leading-none">
+                K. Ram<br/>
+              </h1>
+              <div className="h-1 w-16 bg-gradient-to-r from-cyan-600 to-transparent mt-6 mb-4"></div>
+              <p className="text-cyan-700 dark:text-cyan-400 font-bold uppercase tracking-widest text-xs lg:text-sm">
+                Proprietor of<br/>Techone Heaters
               </p>
             </div>
 
-            {/* Quote Block */}
-            <div className="mt-10 p-6 sm:p-8 bg-white dark:bg-industrial-900 border-l-4 border-orange-600 shadow-sm dark:shadow-none relative">
-              <span className="absolute -top-4 -left-3 text-6xl text-orange-600/20 dark:text-orange-500/20 font-serif leading-none select-none">"</span>
-              <p className="font-montserrat text-xl font-bold text-gray-900 dark:text-gray-200 italic leading-snug relative z-10">
-                "Our commitment isn't just to manufacture heaters; it is to engineer the reliable thermal infrastructure that keeps our clients' factories running without interruption."
-              </p>
+            {/* Right Block: The Manifesto */}
+            <div className="lg:col-span-8 p-8 lg:p-16 flex flex-col justify-center bg-white/90 dark:bg-industrial-900/90 backdrop-blur-sm">
+              
+              <div className="flex items-start gap-4 sm:gap-6 mb-10">
+                {/* FIX 2: Added shrink-0 so the quote mark never squishes the text */}
+                <span className="text-6xl sm:text-8xl text-orange-600/30 dark:text-orange-500/30 font-serif leading-none mt-2 select-none shrink-0">"</span>
+                <p className="font-montserrat text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 italic leading-snug">
+                  Our commitment isn't just to manufacture heaters; it is to engineer the reliable thermal infrastructure that keeps our clients' factories running without interruption.
+                </p>
+              </div>
+
+              {/* FIX 3: Changed sm:grid-cols-2 to md:grid-cols-2 so they stack neatly on mobile */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+                <div>
+                  <h4 className="flex items-center gap-2 font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-3 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" /> The Vision
+                  </h4>
+                  <p>
+                    K. Ram established TECHONE HEATERS with a singular vision: to engineer thermal processing solutions that outlast and outperform standard industry benchmarks. 
+                  </p>
+                </div>
+                <div>
+                  <h4 className="flex items-center gap-2 font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-3 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-500 shrink-0" /> The Execution
+                  </h4>
+                  <p>
+                    What started as a specialized heating element workshop in Hyderabad has evolved into a globally trusted manufacturing partner for heavy machinery sectors.
+                  </p>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* 2. Company Legacy Section (Now Second) */}
+      {/* 2. Company Legacy Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 pt-12 border-t border-gray-200 dark:border-white/10 transition-colors duration-300">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-0.5 w-8 bg-orange-500"></div>
-              {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
               <span className="font-arimo text-orange-600 dark:text-orange-500 font-bold uppercase tracking-[0.15em] text-sm md:text-base transition-colors duration-300">Our Legacy</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white uppercase tracking-tight mb-8 leading-tight transition-colors duration-300 font-montserrat">
@@ -110,16 +126,34 @@ export default function AboutPage() {
       </div>
 
       {/* 3. Core Pillars */}
-      <div className="bg-white dark:bg-industrial-900 py-24 border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
+      <div className="bg-white dark:bg-industrial-900 py-16 sm:py-24 border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading title="The Techone Advantage" subtitle="Why Industries Trust Us" align="center" />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          {/* 
+            FIX 1: Changed grid-cols-1 to grid-cols-2 so it forces 2 columns on mobile. 
+            Adjusted gap-8 to gap-3 sm:gap-8 so the cards fit nicely on small screens. 
+          */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8 mt-12 sm:mt-16">
             {pillars.map((pillar, idx) => (
-              <div key={idx} className="bg-gray-50 dark:bg-industrial-800 border border-gray-200 dark:border-white/10 p-8 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-colors duration-500 shadow-sm dark:shadow-none">
-                <div className="mb-6">{pillar.icon}</div>
-                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wide transition-colors duration-300">{pillar.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300">{pillar.desc}</p>
+              /* FIX 2: Reduced mobile padding (p-4) but kept desktop padding (sm:p-8) */
+              <div key={idx} className="bg-gray-50 dark:bg-industrial-800 border border-gray-200 dark:border-white/10 p-4 sm:p-8 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-colors duration-500 shadow-sm dark:shadow-none flex flex-col h-full">
+                
+                {/* FIX 3: Used Tailwind to shrink the icons slightly on mobile */}
+                <div className="mb-3 sm:mb-6 [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8">
+                  {pillar.icon}
+                </div>
+                
+                {/* FIX 4: Shrunk title to text-sm on mobile to prevent text wrapping awkwardly */}
+                <h4 className="text-sm sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 uppercase tracking-wide sm:tracking-wider transition-colors duration-300">
+                  {pillar.title}
+                </h4>
+                
+                {/* FIX 5: Shrunk description to text-xs on mobile */}
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 flex-grow">
+                  {pillar.desc}
+                </p>
+                
               </div>
             ))}
           </div>

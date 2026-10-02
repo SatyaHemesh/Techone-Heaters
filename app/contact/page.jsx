@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <div>
                   {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
                   <h4 className="font-arimo text-sm text-gray-900 dark:text-white font-bold uppercase tracking-[0.15em] mb-1 transition-colors duration-300">Manufacturing Facility</h4>
-                  <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">#506/P, 7-920, Subash Nagar,<br/>Quthbullapur Mdl., Jeedimetla,<br/>Hyderabad - 500 055 (T.S.), India</p>
+                  <p className="text-gray-600 dark:text-gray-400 transition-colors duration-300">#506/P, 7-920, Subash Nagar,<br/>Quthbullapur Mandal, Jeedimetla,<br/>Hyderabad, Telangana, India - 500 055</p>
                 </div>
               </div>
 

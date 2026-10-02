@@ -1,12 +1,7 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { Great_Vibes } from 'next/font/google';
-
-const greatVibes = Great_Vibes({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export default function Footer() {
   return (
@@ -41,11 +36,11 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links (Equipment) */}
           <div>
-            {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
             <h4 className="font-arimo text-gray-900 dark:text-white font-bold uppercase tracking-[0.15em] mb-6 transition-colors">Equipment</h4>
-            <ul className="space-y-3">
+            {/* 2-column grid on mobile */}
+            <ul className="grid grid-cols-2 lg:grid-cols-1 gap-y-3 gap-x-2">
               <li><Link href="/products" className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors">Band Heaters</Link></li>
               <li><Link href="/products" className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors">Immersion Heaters</Link></li>
               <li><Link href="/products" className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 text-sm transition-colors">Muffle Furnaces</Link></li>
@@ -55,45 +50,35 @@ export default function Footer() {
 
           {/* Contact Col */}
           <div className="lg:col-span-2">
-            {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
-            <h4 className="font-arimo text-gray-900 dark:text-white font-bold uppercase tracking-[0.15em] mb-6 transition-colors">Corporate Headquarters</h4>
-            <div className="bg-white dark:bg-industrial-800 border border-gray-200 dark:border-white/10 p-6 flex flex-col md:flex-row gap-6 shadow-sm dark:shadow-none transition-colors duration-300">
-              <div className="flex-1">
-                {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
-                <p className="font-arimo text-xs text-gray-500 dark:text-gray-400 mb-2 font-bold uppercase tracking-[0.15em] transition-colors">Address</p>
-                <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors">#506/P, 7-920, Subash Nagar,<br/>Quthbullapur Mdl., Jeedimetla,<br/>Hyderabad - 500 055 (T.S.)</p>
+            <h4 className="font-arimo text-gray-900 dark:text-white font-bold uppercase tracking-[0.15em] mb-6 transition-colors">Manufacturing Unit & Office</h4>
+            {/* Forced 2-column grid on mobile with a subtle divider line between them */}
+            <div className="bg-white dark:bg-industrial-800 border border-gray-200 dark:border-white/10 p-5 sm:p-6 grid grid-cols-2 gap-4 shadow-sm dark:shadow-none transition-colors duration-300">
+              
+              <div className="flex flex-col pr-2">
+                <p className="font-arimo text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 mb-2 font-bold uppercase tracking-[0.15em] transition-colors">Address</p>
+                {/* Adjusted text-xs on mobile to prevent wrapping issues */}
+                <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 transition-colors">#506/P, 7-920, Subash Nagar,<br/>Quthbullapur Mandal, Jeedimetla,<br/>Hyderabad, Telangana, India - 500055</p>
               </div>
-              <div className="flex-1">
-                {/* UPDATED: font-arimo and tracking-[0.15em] applied */}
-                <p className="font-arimo text-xs text-gray-500 dark:text-gray-400 mb-2 font-bold uppercase tracking-[0.15em] transition-colors">Contact</p>
-                <a href="tel:+919177776501" className="text-sm text-gray-900 dark:text-white font-bold mb-1 transition-colors hover:underline hover:decoration-orange-600 hover:underline-offset-4">
+
+              <div className="flex flex-col border-l border-gray-200 dark:border-white/10 pl-4">
+                <p className="font-arimo text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 mb-2 font-bold uppercase tracking-[0.15em] transition-colors">Contact</p>
+                <a href="tel:+919177776501" className="text-xs sm:text-sm text-gray-900 dark:text-white font-bold mb-1 transition-colors hover:underline hover:decoration-orange-600 hover:underline-offset-4 block">
                   Cell: +91 91777 76501
                 </a>
-                <div> 
-                  <a href="tel:+919700541138" className="text-sm text-gray-900 dark:text-white font-bold mb-3 transition-colors hover:underline hover:decoration-orange-600 hover:underline-offset-4">
-                    Cell: +91 97005 41138
-                  </a> 
-                </div>
-                <a href="mailto:techoneheaters@gmail.com" className="text-sm text-cyan-600 dark:text-cyan-400 hover:underline break-all transition-colors">techoneheaters@gmail.com</a>
+                <a href="tel:+919700541138" className="text-xs sm:text-sm text-gray-900 dark:text-white font-bold mb-3 transition-colors hover:underline hover:decoration-orange-600 hover:underline-offset-4 block">
+                  Cell: +91 97005 41138
+                </a> 
+                <a href="mailto:techoneheaters@gmail.com" className="text-xs sm:text-sm text-cyan-600 dark:text-cyan-400 hover:underline break-all transition-colors block">techoneheaters@gmail.com</a>
               </div>
+
             </div>
           </div>
         </div>
 
-        {/* Copyright & Custom Developer Credit */}
-        <div className="border-t border-gray-200 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 transition-colors duration-300">
-          <p className="text-xs text-gray-500 dark:text-gray-500 transition-colors">© {new Date().getFullYear()} TECHONE HEATERS. All Rights Reserved.</p>
-          
-          <p className="text-xs text-gray-400 dark:text-gray-600 uppercase tracking-widest font-bold transition-colors flex items-center gap-3">
-            ENGINEERED & DEVELOPED BY{' '}
-            <a 
-              href="https://satyahemesh.netlify.app" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`${greatVibes.className} font-normal capitalize tracking-normal text-2xl text-gray-900 dark:text-white hover:text-orange-600 dark:hover:text-orange-500 transition-colors pb-1`}
-            >
-              Routhu Satya Hemesh
-            </a>
+        {/* Clean, Centered Copyright */}
+        <div className="border-t border-gray-200 dark:border-white/10 pt-8 pb-2 flex justify-center text-center transition-colors duration-300">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium font-montserrat transition-colors">
+            © {new Date().getFullYear()} TECHONE HEATERS. All Rights Reserved.
           </p>
         </div>
       </div>
